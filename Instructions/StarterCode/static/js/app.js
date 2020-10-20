@@ -1,9 +1,9 @@
-function buildMetadata(sample) {
+function buildData(sample) {
 
     // Complete the following function that builds the data
   
     // Use `d3.json` to fetch the data for a sample
-    d3.json(`/data/${sample}`).then((fetchSample) => {
+    d3.json(`/Data/${sample}`).then((fetchSample) => {
       console.log(fetchSample)
       
   
@@ -102,14 +102,14 @@ function buildMetadata(sample) {
       // Use the first sample from the list to build the initial plots
       const firstSample = sampleNames[0];
       buildCharts(firstSample);
-      buildMetadata(firstSample);
+      buildData(firstSample);
     });
   }
   
   function optionChanged(newSample) {
     // Fetch new data each time a new sample is selected
     buildCharts(newSample);
-    buildMetadata(newSample);
+    buildData(newSample);
   }
   
   // Initialize the dashboard
